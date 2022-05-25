@@ -3,11 +3,7 @@ import Gallery from "./Gallery";
 import Nav from "./Nav";
 import Profile from "./Profile";
 import Sambutan from "./Sambutan";
-export {
-  Footer,
-  Gallery,
-  Sambutan,
-  Profile,
-  Nav
-};
+import SchoolProfile from "./SchoolProfile";
+
+export { SchoolProfile, Footer, Gallery, Sambutan, Profile, Nav };
 
