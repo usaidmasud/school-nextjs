@@ -30,7 +30,7 @@ const menus: IMenu[] = [
   },
   {
     title: "Lainnya",
-    href: "/",
+    href: "/fasility",
     isActive: false,
   },
   {
