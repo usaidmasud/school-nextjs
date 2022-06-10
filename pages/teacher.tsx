@@ -1,7 +1,7 @@
 import { NextPage } from "next";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import { FiSearch } from "react-icons/fi";
+import { FiFacebook, FiLinkedin, FiSearch, FiTwitter } from "react-icons/fi";
 import { Hero } from "../components/moleculs";
 import { HomePage } from "../components/templates";
 
@@ -33,9 +33,9 @@ const Teacher: NextPage = () => {
     <HomePage>
       <Hero title="Data Guru" description="Data Guru SMP Negeri 1 Cibadak" />
 
-      <div className="p-8 mb-8">
+      <div className="p-10 md:p-20 mb-8">
         {/* search */}
-        <div className="float-right">
+        <div className="float-none md:float-right">
           <div className="inline-flex gap-2 border border-gray-300 px-4 py-2 items-center">
             <FiSearch />
             <input
@@ -47,12 +47,12 @@ const Teacher: NextPage = () => {
         </div>
         <div className="clear-right" />
         <div className="mt-8">
-          <div className="grid grid-cols-3 gap-8 ">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 ">
             {/* loop array 6 */}
             {[1, 2, 3, 4, 5, 6].map((item) => (
               <TeacherItem
                 key={item}
-                image="https://cdn.pixabay.com/photo/2016/03/27/17/42/man-1283235__340.jpg"
+                image="https://tailwindcss.com/_next/static/media/sarah-dayan.a8ff3f1095a58085a82e3bb6aab12eb2.jpg"
                 nip="103034934829034"
                 study="English"
                 name="Teacher Name"
@@ -63,7 +63,7 @@ const Teacher: NextPage = () => {
         </div>
         <div className="mt-8 m-auto text-center">
           <nav aria-label="Page navigation example">
-            <ul className="inline-flex -space-x-px">
+            <ul className="block -space-x-px">
               <li>
                 <a
                   href="#"
@@ -150,31 +150,44 @@ interface ITeacherItem {
 
 const TeacherItem: React.FC<ITeacherItem> = (props) => {
   return (
-    <div className="border border-gray-300">
-      <div className="relative h-48 w-auto  ">
-        <Image
-          src={props.image}
-          alt={props.name}
-          layout="fill"
-          objectFit="inherit"
-        />
+    <div className="border border-gray-300 rounded-md shadow-sm overflow-hidden">
+      <div className="px-8 pt-8">
+        <div className="relative h-48 w-44 mx-auto ">
+          <Image
+            src={props.image}
+            alt={props.name}
+            layout="fill"
+            objectFit="cover"
+            className="rounded-md"
+          />
+        </div>
+        <div className="my-4">
+          <ul>
+            <li className="inline-flex">
+              <span className="text-gray-600 font-semibold w-20">Name</span>
+              <span className="text-gray-800">: {props.name}</span>
+            </li>
+            <li className="inline-flex">
+              <span className="text-gray-600 font-semibold w-20">NIP</span>
+              <span className="text-gray-800">: {props.nip}</span>
+            </li>
+            <li className="inline-flex">
+              <span className="text-gray-600 font-semibold w-20">Study</span>
+              <span className="text-gray-800">: {props.study}</span>
+            </li>
+          </ul>
+        </div>
       </div>
-      <div className="mt-2 p-2">
-        <ul>
-          <li className="inline-flex text-sm">
-            <span className="font-semibold w-12">Nama</span>
-            <span className="w-2">:</span>
-            <span className="flex-1">{props.name}</span>
+      <div className="h-12 bg-secondary-primary flex justify-center items-center">
+        <ul className="inline-flex gap-4">
+          <li className="p-[5px] bg-gray-100 rounded-full text-gray-800">
+            <FiLinkedin className="text-xl" />
           </li>
-          <li className="inline-flex text-sm">
-            <span className="font-semibold w-12">NIP</span>
-            <span className="w-2">:</span>
-            <span className="flex-1">{props.nip}</span>
+          <li className="p-[5px] bg-gray-100 rounded-full text-gray-800">
+            <FiFacebook className="text-xl" />
           </li>
-          <li className="inline-flex text-sm">
-            <span className="font-semibold w-12">Study</span>
-            <span className="w-2">:</span>
-            <span className="flex-1">{props.study}</span>
+          <li className="p-[5px] bg-gray-100 rounded-full text-gray-800">
+            <FiTwitter className="text-xl" />
           </li>
         </ul>
       </div>

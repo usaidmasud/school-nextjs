@@ -12,8 +12,8 @@ const Fasility: NextPage = () => {
         description="Terdapat beberapa fasilitas di SMP Negeri 1 Cibadak"
       />
 
-      <section className=" p-8">
-        <div className="grid grid-cols-3 gap-4">
+      <section className="p-10 md:p-20 ">
+        <div className="grid grid-cols-1 md:grid-cols-3  gap-4">
           <Item
             image="https://cdn.pixabay.com/photo/2020/04/05/07/47/security-5004948__340.jpg"
             title="CCTV"
