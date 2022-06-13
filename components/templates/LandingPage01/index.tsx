@@ -44,17 +44,17 @@ const menuItems: IMenuItem[] = [
 ];
 const LandingPage01: React.FC<ILandingPage01Props> = (props) => {
   return (
-    <div className="font-poppins">
+    <>
       {/* START: navbar */}
-      <nav className="h-[100px] bg-gray-50 w-full p-[50px] flex justify-between items-center">
+      <nav className="h-[100px] bg-p01-prussian-blue-100 w-full p-[50px] flex justify-between items-center">
         <div className="">
-          <h3 className="font-semibold text-3xl">LOGO</h3>
+          <h3 className="font-semibold text-3xl text-white">LOGO</h3>
         </div>
         <div className="inline-flex gap-8 items-center">
-          <ul className="inline-flex gap-4">
+          <ul className="hidden  md:inline-flex gap-4">
             {menuItems.map((item, index) => (
               <li
-                className={` leading-8 ${
+                className={` leading-8 text-sm md:text-base ${
                   item.active ? "font-semibold" : "font-normal"
                 }`}
                 key={index}
@@ -63,7 +63,7 @@ const LandingPage01: React.FC<ILandingPage01Props> = (props) => {
               </li>
             ))}
           </ul>
-          <div className="p-2 bg-gray-600 cursor-pointer rounded-full text-yellow-primary">
+          <div className="p-2 bg-p01-corn-flower-100 cursor-pointer rounded-full text-p01-prussian-blue-100">
             <FiSun className="text-xl" />
           </div>
         </div>
@@ -72,16 +72,16 @@ const LandingPage01: React.FC<ILandingPage01Props> = (props) => {
       {/* END: navbar */}
       <main className="bg-gray-200">{props.children}</main>
       {/* START: Footer */}
-      <footer className="bg-gray-400 p-[50px]">
+      <footer className="p-4 md:p-[50px] bg-gray-900 text-gray-200">
         <div className="text-center">
           <h2 className=" text-2xl font-semibold">Logo</h2>
         </div>
-        <div className=" border-gray-700 border-b-4 mt-5" />
+        <div className=" border-gray-300 border-b-2 mt-5" />
 
         <div className="text-center mt-5">
-          <ul className="inline-flex gap-8">
+          <ul className="inline-flex gap-3 md:gap-8">
             {menuItems.map((item, index) => (
-              <li className="text-lg " key={index}>
+              <li className=" text-sm md:text-lg " key={index}>
                 {item.label}
               </li>
             ))}
@@ -104,11 +104,11 @@ const LandingPage01: React.FC<ILandingPage01Props> = (props) => {
           </ul>
         </div>
         <div className="text-center mt-5">
-          <p className="">Copyright &copy; 2022. All Right Reserved</p>
+          <p className="text-sm md:text-base">Copyright &copy; 2022. All Right Reserved</p>
         </div>
       </footer>
       {/* END: Footer */}
-    </div>
+    </>
   );
 };
 
